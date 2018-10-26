@@ -47,8 +47,6 @@ public class RequestRecyclerViewAdapter extends RecyclerView.Adapter<RequestRecy
                     mName.substring(0,1),
                     generator.getColor(mName));
         holder.mImageView.setImageDrawable(drawable);
-
-
     }
 
     @Override
@@ -64,6 +62,7 @@ public class RequestRecyclerViewAdapter extends RecyclerView.Adapter<RequestRecy
         public final TextView mDNI;
         public final TextView mEmail;
         public final ImageView mImageView;
+
 
 
         public ViewHolder(View view) {
