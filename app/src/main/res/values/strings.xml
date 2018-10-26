@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">MANAGER FROM EVENT</string>
+    <string name="app_name_login">LOGIN</string>
+    <string name="app_name_solicity">REQUEST</string>
+    <string name="Welcome">Bienvenido al Gestor de Incidencia de Gran Canaria</string>
+    <string name="countrie">Seleccione su municipio :</string>
+    <string name="Start_Formulario">BIENVENIDO AL GESTOR DE INCIDENCIAS DEL MUNICIPIO DE</string>
+    <string name="Formulary" size="3">Formulario</string>
+
+
+    <string name="navigation_drawer_open">asdasda</string>
+    <string name="navigation_drawer_close">22222</string>
+
+
+    <!-- Menú -->
+
+    <string name="menu_profile">Pefil</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="menu_new_event">Nueva Solicitud</string>
+
+    <!-- Iconos de Ayuda -->
+    <string name="frecuent_questions">Preguntas Frecuentes</string>
+    <string name="close_session">Cerrar Sesión</string>
+    <string name="settings">Configuración</string>
+
+    <!-- Formulario -->
+
+    <string name="Name">Nombre</string>
+    <string name="DNI">DNI</string>
+    <string name="Email">Email</string>
+    <string name="Telefono">Teléfono</string>
+    <string name="Departament">Departamentos</string>
+    <string name="Queja">Motivo Queja</string>
+    <string name="Picture">Adjunte Imagen</string>
+    <string name="captura">Captura</string>
+
+    <!-- INFORMACION PREGUNTAS FRECUENTES  -->
+
+    <string name="titulo_preguntas">PREGUNTAS FRECUENTES</string>
+    <string name="information">Bienvenidos a este apartado de preguntas frecuentes. Antes de comenzar las diferentes preguntas casuales que podemos tener
+    debemos explicar el principal uso que tiene la aplicación AFV. AFV es una aplicación destinada a la queja/exposición ciudadana sobre temas que podemos tener en nuestro municipio. </string>
+
+    <!-- Botones  -->
+
+    <string name="Send">Enviar</string>
+    <string name="Cancel">Cancelar</string>
+    <string name="Acept">Aceptar</string>
+
+    <!-- Errores -->
+
+    <string name="error_de_campo_obligatorio">Campo obligatorio</string>
+    <string name="error_de_campo_numerico">Campo numérico</string>
+    <string name="error_valor_emtre_0_9">Valor entre 0 y 9 dígitos</string>
+    <string name="title_activity_login">Login</string>
+
+
+    <!--Login -->
+
+    <string name="Login_password">Contraseña</string>
+    <string name="Login_name">Nombre</string>
+    <string name="login">Login</string>
+    <string name="Register">Registrate Aquí</string>
+
+    <!--Departamentos -->
+
+    <string name="Science">Consejería de Cultura</string>
+    <string name="city_planning">Consejería de Urbanismo</string>
+    <string name="education">Consejería de Educación</string>
+    <string name="title_activity_login__principal">Sign in</string>
+    <string name="title_activity_menu_principal_usuario">MenuPrincipalUsuario</string>
+    <string name="title_activity_menu_segundario_usuario">MenuSegundarioUsuario</string>
+
+    <!--Apartados de nuestro menuprincipalusuario -->
+
+    <string name="New_formulary">Nueva Solicitud</string>
+    <string name="My_events">Mis Solicitudes</string>
+    <string name="title_activity_configuracion_usuario">Settings</string>
+
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_preguntas__frecuentes">Preguntas_Frecuentes</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_my_request">MyRequest</string>
+
+
+</resources>

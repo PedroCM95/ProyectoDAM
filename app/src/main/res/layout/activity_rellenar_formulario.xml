@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.pedro.proyecto_pgl_2018.RellenarFormulario">
+
+    <ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/editTextNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:hint="@string/Name"
+                        android:inputType="textCapWords" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/editTextDNI"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/DNI"
+                            android:layout_marginLeft="5dp"
+                            android:maxLength="9"/>
+
+                 </android.support.design.widget.TextInputLayout>
+
+
+                 <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                     <EditText
+                            android:id="@+id/editTextEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Email"
+                            android:layout_marginLeft="5dp"
+                            android:inputType="textEmailAddress" />
+
+                 </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                     <EditText
+                            android:id="@+id/editTextTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Telefono"
+                            android:inputType="phone"
+                            android:layout_marginLeft="5dp"
+                            android:maxLength="9"/>
+
+                 </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/editTextQueja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Queja"
+            android:layout_marginLeft="5dp"
+            android:maxLength="150"
+            android:inputType="textMultiLine"
+            android:lines="5"
+
+
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Picture"
+        android:layout_margin="10dp"
+       />
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_menu_camera"
+        android:layout_marginLeft="10dp"/>
+
+    <Button
+        android:id="@+id/button_captura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/captura"
+        android:layout_marginLeft="10dp"/>
+
+        <Button
+            android:id="@+id/EnviarFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Send"
+            android:layout_margin="20dp"
+
+            />
+
+   </LinearLayout>
+  </ScrollView>
+</LinearLayout>

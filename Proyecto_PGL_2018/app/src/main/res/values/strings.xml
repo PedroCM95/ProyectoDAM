@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">AGENT FROM EVENT</string>
+    <string name="app_name_login">LOGIN</string>
+    <string name="app_name_solicity">REQUEST</string>
+
+    <string name="Inicio_Bienvenida">Bienvenido al Gestor de Incidencia de Gran Canaria</string>
+    <string name="countrie">Seleccione su municipio :</string>
+    <string name="Inicio_Formulario">Bienvenido al Gestor de Incidencia del Municipio de</string>
+
+
+    <string name="formulario" size="3">Formulario</string>
+
+
+    <!-- Formulario -->
+
+    <string name="Nombre">Nombre</string>
+    <string name="DNI">DNI</string>
+    <string name="Email">Email</string>
+    <string name="Telefono">Teléfono</string>
+    <string name="Departamento">Departamento</string>
+    <string name="Queja">Explicación de la Queja</string>
+    <string name="Imagen">Adjunte Imagen</string>
+
+
+    <!-- Botones  -->
+
+    <string name="Enviar">Enviar</string>
+    <string name="Cancelar">Cancelar</string>
+    <string name="Acept">Aceptar</string>
+
+    <!-- Errores -->
+
+    <string name="error_de_campo_obligatorio">Campo obligatorio</string>
+    <string name="error_de_campo_numerico">Campo numérico</string>
+    <string name="error_valor_emtre_0_9">Valor entre 0 y 9 dígitos</string>
+    <string name="title_activity_login">Login</string>
+
+
+    <!--Login -->
+
+    <string name="Login_password">Contraseña</string>
+    <string name="Login_name">Nombre</string>
+    <string name="login">Login</string>
+    <string name="Register">Registrate Aquí</string>
+
+    <!--Departamentos -->
+
+    <string name="Science">Concejería de Cultura</string>
+    <string name="city_planning">Urbanismo</string>
+    <string name="education">Educación</string>
+    <string name="title_activity_login__principal">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_menu_principal_usuario">MenuPrincipalUsuario</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Apartados de nuestro menuprincipalusuario -->
+
+    <string name="New_formulary">Nueva Solicitud</string>
+
+</resources>

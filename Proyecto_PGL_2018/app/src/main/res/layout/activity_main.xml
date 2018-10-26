@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="com.example.pedro.proyecto_pgl_2018.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/Inicio_Bienvenida"
+        android:id="@+id/textView_Start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/textView_Start"
+        android:hint="@string/countrie"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+
+
+        />
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/FirstPicture"
+
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_fondo_principal_1" />
+
+    <Spinner
+        android:id="@+id/spinner_lista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_Start"
+        android:layout_above="@id/button_principal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="22dp"
+       />
+
+    <Button
+        android:id="@+id/button_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/FirstPicture"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/Acept"
+        />
+
+
+</RelativeLayout>

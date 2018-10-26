@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/formulary"
+        android:orderInCategory="100"
+        android:title="@string/New_formulary"
+        android:icon="@drawable/ic_formulario_white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/configuracion"
+        android:orderInCategory="100"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/preguntas_frecuentes"
+        android:orderInCategory="100"
+        android:title="@string/frecuent_questions"
+        app:showAsAction="never" />
+</menu>
