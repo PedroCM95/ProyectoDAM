@@ -24,7 +24,13 @@
         <activity
             android:name=".RellenarFormulario"
             android:label="@string/app_name_solicity"
-            android:parentActivityName=".MenuPrincipalUsuario" />
+            android:parentActivityName=".MenuPrincipalUsuario"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalUsuario" />
+        </activity>
         <activity
             android:name=".LoginPrincipal"
             android:label="@string/app_name_login"
@@ -65,7 +71,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".MyRequest"
+            android:name=".manager.MyRequest"
             android:label="@string/title_activity_my_request"
             android:parentActivityName=".MenuPrincipalUsuario"
             android:theme="@style/AppTheme.NoActionBar">

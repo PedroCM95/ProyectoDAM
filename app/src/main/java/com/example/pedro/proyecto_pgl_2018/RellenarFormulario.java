@@ -1,41 +1,24 @@
 package com.example.pedro.proyecto_pgl_2018;
 
-import android.Manifest;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
+import android.support.v7.widget.Toolbar;
 import com.example.pedro.proyecto_pgl_2018.constantes.Utilidades;
-import com.frosquivel.magicalcamera.MagicalCamera;
-import com.frosquivel.magicalcamera.MagicalPermissions;
-
-import org.w3c.dom.Text;
-
-import java.io.File;
 import java.io.IOException;
-import java.util.Map;
-import java.util.regex.Pattern;
-
 
 public class RellenarFormulario extends AppCompatActivity {
 
@@ -45,13 +28,19 @@ public class RellenarFormulario extends AppCompatActivity {
 
     final int COD_SELECCIONA = 1;
     public static final int CAMERA_REQUEST = 2;
-    //public static final String NUMEROS = "^[0-9]+$";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rellenar_formulario);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_formulario);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
 
         picture = (ImageView) findViewById(R.id.picture);
         button_captura = (Button) findViewById(R.id.button_captura);
@@ -77,6 +66,83 @@ public class RellenarFormulario extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuItem menuItem = menu.add(Menu.NONE, Utilidades.GUARDAR, Menu.NONE, "Guardar");
+        menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menuItem.setIcon(R.drawable.ic_action_guardar);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case Utilidades.GUARDAR:
+                attemptGuardar();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    void attemptGuardar(){
+
+        editTextNombre = (EditText) findViewById(R.id.editTextNombre);
+        editTextDNI = (EditText) findViewById(R.id.editTextDNI);
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextTelefono = (EditText) findViewById(R.id.editTextTelefono);
+        editTextQueja = (EditText) findViewById(R.id.editTextQueja);
+        picture = (ImageView) findViewById(R.id.picture);
+
+        editTextNombre.setError(null);
+        editTextDNI.setError(null);
+        editTextEmail.setError(null);
+        editTextTelefono.setError(null);
+        editTextQueja.setError(null);
+       // picture = null;
+
+        String nombre = String.valueOf(editTextNombre.getText());
+        String dni = String.valueOf(editTextDNI.getText());
+        String email = String.valueOf(editTextEmail.getText());
+        String telefono = String.valueOf(editTextTelefono.getText());
+        String queja = String.valueOf(editTextQueja.getText());
+        //String imagen = String.valueOf(picture.getImageAlpha());
+
+        if(TextUtils.isEmpty(nombre)){
+
+            editTextNombre.setError(getString(R.string.error_de_campo_obligatorio));
+            editTextNombre.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(dni)){
+
+            editTextDNI.setError(getString(R.string.error_de_campo_obligatorio));
+            editTextDNI.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(email)){
+
+            editTextEmail.setError(getString(R.string.error_de_campo_obligatorio));
+            editTextEmail.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(queja)){
+
+            editTextQueja.setError(getString(R.string.error_de_campo_obligatorio));
+            editTextQueja.requestFocus();
+            return;
+        }
+        if(TextUtils.isEmpty(telefono)){
+
+            editTextQueja.setError(getString(R.string.error_de_campo_obligatorio));
+            editTextQueja.requestFocus();
+            return;
+        }
+    }
 
     private void cargarImagen() {
 

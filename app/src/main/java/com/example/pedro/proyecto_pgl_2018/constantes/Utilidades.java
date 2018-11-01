@@ -25,4 +25,7 @@ public class Utilidades {
         fos.close();
     }
 
+    public static final int INSERTAR = 1;
+    public static final int GUARDAR = 2;
+
 }
