@@ -28,9 +28,9 @@ public class ManagerEventsContentProvider extends ContentProvider {
     public DatabaseHelper dbHelper;
 
     private final static String DATABASE_NAME = "manager_event.db";
-    private final static int DATABASE_VERSION = 1;
+    private final static int DATABASE_VERSION = 4;
 
-    public static final String TABLE_NAME = "request";
+    public static final String TABLE_NAME = "Request";
 
     public static final int INVALID_URI = -1;
 
@@ -70,21 +70,20 @@ public class ManagerEventsContentProvider extends ContentProvider {
             db.execSQL("CREATE TABLE " + TABLE_NAME +
                     " ( _id INTEGER PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT, " +
                     ManagerEventApplication.Solicitud.Name + " TEXT, " +
-                    ManagerEventApplication.Solicitud.DNI + " TEXT, " +
-                    ManagerEventApplication.Solicitud.Departament + " TEXT, " +
-                    ManagerEventApplication.Solicitud.Email + " TEXT );");
+                    ManagerEventApplication.Solicitud.Lugar + " TEXT, " +
+                    ManagerEventApplication.Solicitud.Queja + " TEXT );");
 
             initilizeData(db);
         }
 
         void initilizeData(SQLiteDatabase db) {
 
-            db.execSQL("INSERT INTO " + TABLE_NAME + " ( " + ManagerEventApplication.Solicitud._ID + "," + ManagerEventApplication.Solicitud.Name + "," + ManagerEventApplication.Solicitud.DNI + "," + ManagerEventApplication.Solicitud.Departament + "," + ManagerEventApplication.Solicitud.Email + " )" +
-                    "VALUES (1, 'Solicitud Alcantarillado', '86578425T', 'Urbanismo', 'pedro@gmail.com')");
-            db.execSQL("INSERT INTO " + TABLE_NAME + " ( " + ManagerEventApplication.Solicitud._ID + "," + ManagerEventApplication.Solicitud.Name + "," + ManagerEventApplication.Solicitud.DNI + "," + ManagerEventApplication.Solicitud.Departament + "," + ManagerEventApplication.Solicitud.Email + " )" +
-                    "VALUES (2, 'Solicitud Aceras', '65784215W', 'Urbanismo', 'cabello@gmail.com')");
-            db.execSQL("INSERT INTO " + TABLE_NAME + " ( " + ManagerEventApplication.Solicitud._ID + "," + ManagerEventApplication.Solicitud.Name + "," + ManagerEventApplication.Solicitud.DNI + "," + ManagerEventApplication.Solicitud.Departament + "," + ManagerEventApplication.Solicitud.Email + " )" +
-                    "VALUES (3, 'Solicitud Obras', '97548651X', 'Concejalia Obras', 'munguia@gmail.com')");
+            db.execSQL("INSERT INTO " + TABLE_NAME + " ( " + ManagerEventApplication.Solicitud._ID + "," + ManagerEventApplication.Solicitud.Name + "," + ManagerEventApplication.Solicitud.Lugar + ","  + ManagerEventApplication.Solicitud.Queja + " )" +
+                    "VALUES (1, 'Solicitud Alcantarillado', 'Calle Romanticismo', 'Estoy en desacuerdo con el problema de las calles')");
+            db.execSQL("INSERT INTO " + TABLE_NAME + " ( " + ManagerEventApplication.Solicitud._ID + "," + ManagerEventApplication.Solicitud.Name + "," + ManagerEventApplication.Solicitud.Lugar + ","  + ManagerEventApplication.Solicitud.Queja + " )" +
+                    "VALUES (2, 'Solicitud Aceras', 'Calle Graciosa', 'Estoy en desacuerdo con el problema de las obras')");
+            db.execSQL("INSERT INTO " + TABLE_NAME + " ( " + ManagerEventApplication.Solicitud._ID + "," + ManagerEventApplication.Solicitud.Name + "," + ManagerEventApplication.Solicitud.Lugar + ","  + ManagerEventApplication.Solicitud.Queja + " )" +
+                    "VALUES (3, 'Solicitud Obras', 'Calle Telde', 'Estoy en desacuerdo con el problema de las obras de fomento')");
         }
 
         @Override
@@ -119,8 +118,13 @@ public class ManagerEventsContentProvider extends ContentProvider {
 
         @Override
         public String getType(Uri uri) {
-            return mimeTypes.get(UriMatcher.match(uri));
+            return null;
         }
+
+        public void resetDatabase() {
+             dbHelper.close();
+             dbHelper = new DatabaseHelper(getContext());
+    }
 
         @Override
         public Uri insert(Uri uri, ContentValues values) {
@@ -172,7 +176,7 @@ public class ManagerEventsContentProvider extends ContentProvider {
             }
 
             Cursor c;
-            c = qb.query(db, projection, selection, selectionArgs, null, null,
+            c = qb.query(db, projection, selection, selectionArgs,null, null,
                     sortOrder);
             c.setNotificationUri(getContext().getContentResolver(), uri);
             return c;

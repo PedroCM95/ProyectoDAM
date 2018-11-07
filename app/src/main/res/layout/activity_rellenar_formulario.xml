@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RellenarFormulario">
+    tools:context=".RellenarFormularioInsertar">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -31,10 +31,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,64 +58,35 @@
                         android:layout_height="wrap_content">
 
                         <EditText
-                            android:id="@+id/editTextDNI"
+                            android:id="@+id/editTextLugar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/DNI"
+                            android:hint="@string/Place"
                             android:layout_marginLeft="5dp"
-                            android:maxLength="9"/>
+                           />
 
                  </android.support.design.widget.TextInputLayout>
 
-
-                 <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                     <EditText
-                            android:id="@+id/editTextEmail"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/Email"
-                            android:layout_marginLeft="5dp"
-                            android:inputType="textEmailAddress" />
-
-                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp">
 
-                     <EditText
-                            android:id="@+id/editTextTelefono"
+                        <EditText
+                            android:id="@+id/editTextQueja"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/Telefono"
-                            android:inputType="phone"
+                            android:hint="@string/Queja"
                             android:layout_marginLeft="5dp"
-                            android:maxLength="9"/>
-
-                 </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
-
-        <EditText
-            android:id="@+id/editTextQueja"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/Queja"
-            android:layout_marginLeft="5dp"
-            android:maxLength="150"
-            android:inputType="textMultiLine"
-            android:lines="5"
+                            android:maxLength="150"
+                            android:inputType="textMultiLine"
+                            android:lines="5"
 
 
-            />
+                            />
 
-    </android.support.design.widget.TextInputLayout>
+                </android.support.design.widget.TextInputLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -140,16 +108,7 @@
         android:text="@string/captura"
         android:layout_marginLeft="10dp"/>
 
-        <Button
-            android:id="@+id/EnviarFormulario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Send"
-            android:layout_margin="20dp"
-
-            />
 
    </LinearLayout>
-  </ScrollView>
  </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

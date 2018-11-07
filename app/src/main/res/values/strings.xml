@@ -26,10 +26,7 @@
     <!-- Formulario -->
 
     <string name="Name">Nombre</string>
-    <string name="DNI">DNI</string>
-    <string name="Email">Email</string>
-    <string name="Telefono">Teléfono</string>
-    <string name="Departament">Departamentos</string>
+    <string name="Place">Dirección</string>
     <string name="Queja">Motivo Queja</string>
     <string name="Picture">Adjunte Imagen</string>
     <string name="captura">Captura</string>

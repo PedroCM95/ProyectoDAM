@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -17,17 +18,21 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
+
+import com.example.pedro.proyecto_pgl_2018.constantes.RequestUtility;
 import com.example.pedro.proyecto_pgl_2018.constantes.Utilidades;
-import java.io.IOException;
+import com.example.pedro.proyecto_pgl_2018.pojos.Solicitud;
 
-public class RellenarFormulario extends AppCompatActivity {
+public class RellenarFormularioInsertar extends AppCompatActivity {
 
-    EditText editTextNombre, editTextDNI, editTextEmail, editTextTelefono, editTextQueja;
-    Button EnviarFormulario, button_captura;
+    EditText editTextNombre, editTextLugar, editTextQueja;
+    Button  button_captura;
     ImageView picture;
 
     final int COD_SELECCIONA = 1;
     public static final int CAMERA_REQUEST = 2;
+
+    Bitmap bitmap = null;
 
 
     @Override
@@ -51,19 +56,8 @@ public class RellenarFormulario extends AppCompatActivity {
             }
         });
         editTextNombre = (EditText) findViewById(R.id.editTextNombre);
-        editTextDNI = (EditText) findViewById(R.id.editTextDNI);
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextTelefono = (EditText) findViewById(R.id.editTextTelefono);
+        editTextLugar = (EditText) findViewById(R.id.editTextLugar);
         editTextQueja = (EditText) findViewById(R.id.editTextQueja);
-
-        Button EnviarFormulario = (Button) findViewById(R.id.EnviarFormulario);
-        EnviarFormulario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                enviar();
-
-            }
-        });
     }
 
     @Override
@@ -89,25 +83,16 @@ public class RellenarFormulario extends AppCompatActivity {
     void attemptGuardar(){
 
         editTextNombre = (EditText) findViewById(R.id.editTextNombre);
-        editTextDNI = (EditText) findViewById(R.id.editTextDNI);
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextTelefono = (EditText) findViewById(R.id.editTextTelefono);
         editTextQueja = (EditText) findViewById(R.id.editTextQueja);
-        picture = (ImageView) findViewById(R.id.picture);
+        editTextLugar = (EditText) findViewById(R.id.editTextLugar);
 
         editTextNombre.setError(null);
-        editTextDNI.setError(null);
-        editTextEmail.setError(null);
-        editTextTelefono.setError(null);
         editTextQueja.setError(null);
-       // picture = null;
+        editTextLugar.setError(null);
 
         String nombre = String.valueOf(editTextNombre.getText());
-        String dni = String.valueOf(editTextDNI.getText());
-        String email = String.valueOf(editTextEmail.getText());
-        String telefono = String.valueOf(editTextTelefono.getText());
+        String lugar = String.valueOf(editTextLugar.getText());
         String queja = String.valueOf(editTextQueja.getText());
-        //String imagen = String.valueOf(picture.getImageAlpha());
 
         if(TextUtils.isEmpty(nombre)){
 
@@ -116,17 +101,10 @@ public class RellenarFormulario extends AppCompatActivity {
             return;
         }
 
-        if(TextUtils.isEmpty(dni)){
+        if(TextUtils.isEmpty(lugar)){
 
-            editTextDNI.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextDNI.requestFocus();
-            return;
-        }
-
-        if(TextUtils.isEmpty(email)){
-
-            editTextEmail.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextEmail.requestFocus();
+            editTextLugar.setError(getString(R.string.error_de_campo_obligatorio));
+            editTextLugar.requestFocus();
             return;
         }
 
@@ -136,18 +114,19 @@ public class RellenarFormulario extends AppCompatActivity {
             editTextQueja.requestFocus();
             return;
         }
-        if(TextUtils.isEmpty(telefono)){
 
-            editTextQueja.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextQueja.requestFocus();
-            return;
-        }
+
+        Solicitud solicitud = new Solicitud(Utilidades.SIN_VALOR_INT, nombre, lugar, queja, bitmap);
+        RequestUtility.insert(getContentResolver(), solicitud, this);
+        finish();
+
+
     }
 
     private void cargarImagen() {
 
         final CharSequence[] opciones = {"Sacar Foto", "Cargar Imagen", "Cancelar"};
-        final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(RellenarFormulario.this);
+        final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(RellenarFormularioInsertar.this);
         alertOpciones.setTitle("Seleccione una Opción");
         alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
             @Override
@@ -181,13 +160,9 @@ public class RellenarFormulario extends AppCompatActivity {
         switch (requestCode) {
             case CAMERA_REQUEST:
                 if (resultCode == RESULT_OK) {
-                    Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                    bitmap = (Bitmap) data.getExtras().get("data");
                     picture.setImageBitmap(bitmap);
-                    try {
-                        Utilidades.storeImage(bitmap, this, "imagen.jpg");
-                    } catch (IOException e) {
-                        Toast.makeText(getApplicationContext(), "No se pudo guardar la imagen", Toast.LENGTH_LONG).show();
-                    }
+
                 } else {
 
                 }
@@ -196,6 +171,7 @@ public class RellenarFormulario extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     Uri uri = data.getData();
                     picture.setImageURI(uri);
+                    bitmap = ((BitmapDrawable) picture.getDrawable()).getBitmap();
 
                 } else {
 
@@ -203,55 +179,5 @@ public class RellenarFormulario extends AppCompatActivity {
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void enviar() {
-
-        editTextNombre.setError(null);
-        editTextDNI.setError(null);
-        editTextEmail.setError(null);
-        editTextTelefono.setError(null);
-        editTextQueja.setError(null);
-
-        String nombre = editTextNombre.getText().toString().trim();
-        String dni = editTextDNI.getText().toString().trim();
-        String email = editTextEmail.getText().toString().trim();
-        String telefono = editTextTelefono.getText().toString().trim();
-        String queja = editTextQueja.getText().toString().trim();
-
-        if(TextUtils.isEmpty(nombre)){
-
-            editTextNombre.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextNombre.requestFocus();
-            return;
-        }
-
-        if(TextUtils.isEmpty(dni)){
-
-            editTextDNI.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextDNI.requestFocus();
-            return;
-        }
-
-        if(TextUtils.isEmpty(email)){
-
-            editTextEmail.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextEmail.requestFocus();
-            return;
-        }
-
-        if(TextUtils.isEmpty(queja)){
-
-            editTextQueja.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextQueja.requestFocus();
-            return;
-        }
-        if(TextUtils.isEmpty(telefono)){
-
-            editTextQueja.setError(getString(R.string.error_de_campo_obligatorio));
-            editTextQueja.requestFocus();
-            return;
-        }
-        Toast.makeText(getApplicationContext(),"Se ha enviado su solicitud correctamente", Toast.LENGTH_LONG).show();
     }
 }

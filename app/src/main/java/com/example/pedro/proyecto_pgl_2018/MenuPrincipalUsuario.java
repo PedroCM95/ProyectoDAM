@@ -35,7 +35,7 @@ public class MenuPrincipalUsuario extends AppCompatActivity
         button_formulary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RellenarFormulario.class);
+                Intent intent = new Intent(getApplicationContext(), RellenarFormularioInsertar.class);
                 startActivity(intent);
             }
         });
@@ -103,7 +103,7 @@ public class MenuPrincipalUsuario extends AppCompatActivity
                 startActivity(intent);
                 break;
             case R.id.formulary:
-                Intent x = new Intent(getApplicationContext(), RellenarFormulario.class);
+                Intent x = new Intent(getApplicationContext(), RellenarFormularioInsertar.class);
                 startActivity(x);
                 break;
         }
@@ -120,7 +120,7 @@ public class MenuPrincipalUsuario extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.event) {
-            Intent intent =  new Intent(getApplicationContext(), RellenarFormulario.class);
+            Intent intent =  new Intent(getApplicationContext(), RellenarFormularioInsertar.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
