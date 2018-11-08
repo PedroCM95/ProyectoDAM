@@ -24,6 +24,8 @@ import com.example.pedro.proyecto_pgl_2018.constantes.RequestUtility;
 import com.example.pedro.proyecto_pgl_2018.constantes.Utilidades;
 import com.example.pedro.proyecto_pgl_2018.pojos.Solicitud;
 
+import java.io.FileNotFoundException;
+
 public class RellenarFormularioModificar extends AppCompatActivity {
 
     EditText editTextNombre, editTextLugar, editTextQueja;
@@ -66,6 +68,12 @@ public class RellenarFormularioModificar extends AppCompatActivity {
         editTextLugar.setText(solicitud.getLugar());
         editTextQueja.setText(solicitud.getQueja());
 
+        try {
+            Utilidades.loadImageFromStorage(this, "img_" + requestID + ".jpg", picture);
+            bitmap = ((BitmapDrawable) picture.getDrawable()).getBitmap();
+        } catch (FileNotFoundException e) {
+            // No existe!
+        }
     }
 
     @Override
@@ -90,13 +98,10 @@ public class RellenarFormularioModificar extends AppCompatActivity {
 
     void attemptGuardar(){
 
-        editTextNombre = (EditText) findViewById(R.id.editTextNombre);
-        editTextQueja = (EditText) findViewById(R.id.editTextQueja);
-        editTextLugar = (EditText) findViewById(R.id.editTextLugar);
-
         editTextNombre.setError(null);
         editTextQueja.setError(null);
         editTextLugar.setError(null);
+
 
         String nombre = String.valueOf(editTextNombre.getText());
         String lugar = String.valueOf(editTextLugar.getText());
@@ -125,10 +130,8 @@ public class RellenarFormularioModificar extends AppCompatActivity {
 
 
         Solicitud solicitud = new Solicitud(requestID, nombre, lugar, queja, bitmap);
-        RequestUtility.update(getContentResolver(), solicitud);
+        RequestUtility.update(getContentResolver(), solicitud, this);
         finish();
-
-
     }
 
     private void cargarImagen() {

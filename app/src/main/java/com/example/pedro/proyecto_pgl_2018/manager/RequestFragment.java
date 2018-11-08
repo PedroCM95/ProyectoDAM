@@ -125,13 +125,13 @@ public class RequestFragment extends ListFragment implements LoaderManager.Loade
         public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
             switch (menuItem.getItemId()){
                 case R.id.menu_delete:
-                    int requetID = (Integer) viewSeleccionado.getTag();
-                    RequestUtility.delete(getActivity().getContentResolver(), requetID);
+                    int requestID = (Integer) viewSeleccionado.getTag();
+                    RequestUtility.delete(getActivity().getContentResolver(), requestID);
                     break;
                 case R.id.menu_edit:
                     Intent intent = new Intent(getActivity(), RellenarFormularioModificar.class);
-                    requetID = (Integer) viewSeleccionado.getTag();
-                    intent.putExtra(ManagerEventApplication.Solicitud._ID, requetID);
+                    requestID = (Integer) viewSeleccionado.getTag();
+                    intent.putExtra(ManagerEventApplication.Solicitud._ID, requestID);
                     startActivity(intent);
                     break;
             }

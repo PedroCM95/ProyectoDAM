@@ -6,9 +6,9 @@ import com.example.pedro.proyecto_pgl_2018.constantes.Utilidades;
 
 public class Solicitud {
     private int ID;
-    String Name;
-    String Lugar;
-    String Queja;
+    private String Name;
+    private String Lugar;
+    private String Queja;
     private Bitmap imagen;
 
     public Solicitud() {

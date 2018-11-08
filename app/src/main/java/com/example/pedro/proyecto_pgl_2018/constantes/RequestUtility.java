@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.pedro.proyecto_pgl_2018.pojos.Solicitud;
@@ -46,7 +47,7 @@ public class RequestUtility {
 
     }
 
-    static public void update(ContentResolver resolver, Solicitud solicitud){
+    static public void update(ContentResolver resolver, Solicitud solicitud, Context contexto){
         Uri uri = Uri.parse(ManagerEventApplication.Solicitud.CONTENT_URI + "/" + solicitud.getID());
 
         ContentValues values = new ContentValues();
@@ -55,6 +56,16 @@ public class RequestUtility {
         values.put(ManagerEventApplication.Solicitud.Queja, solicitud.getQueja());
 
         resolver.update(uri,  values, null, null);
+
+        //String requestID = uriResultado.getLastPathSegment();
+
+        if (solicitud.getImagen()!=null){
+            try {
+                Utilidades.storeImage(solicitud.getImagen(), contexto, "img_" + solicitud.getID() + ".jpg");
+            } catch (IOException e) {
+                Toast.makeText(contexto,"No se puede guardar la imagen", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     static public Solicitud readRecord(ContentResolver resolver, int requestID){

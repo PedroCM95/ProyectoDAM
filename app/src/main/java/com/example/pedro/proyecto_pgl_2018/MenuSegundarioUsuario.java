@@ -130,6 +130,7 @@ public class MenuSegundarioUsuario extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
             View view = inflater.inflate(R.layout.fragment_menu_segundario_usuario, container, false);
             TextView textViewFragmento = (TextView) view.findViewById(R.id.section_label);
             switch (mPosition){
@@ -138,9 +139,6 @@ public class MenuSegundarioUsuario extends AppCompatActivity {
                     break;
                 case 1:
                     textViewFragmento.setText("Configuración");
-                    break;
-                case 2:
-                    textViewFragmento.setText("Mis Solicitudes");
                     break;
             }
             return view;
@@ -167,7 +165,7 @@ public class MenuSegundarioUsuario extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -177,8 +175,6 @@ public class MenuSegundarioUsuario extends AppCompatActivity {
                     return "Perfil";
                 case 1:
                     return "Configuración";
-                case 2:
-                    return "Mis Solicitudes";
             }
             return null;
         }

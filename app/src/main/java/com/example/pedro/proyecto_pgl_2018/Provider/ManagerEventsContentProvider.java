@@ -200,7 +200,7 @@ public class ManagerEventsContentProvider extends ContentProvider {
                     break;
             }
 
-            int rows = sqlDB.delete(table, selection, selectionArgs);
+            int rows = sqlDB.update(table, values, selection, selectionArgs);
             if (rows > 0) {
                 getContext().getContentResolver().notifyChange(uri, null);
                 return rows;
