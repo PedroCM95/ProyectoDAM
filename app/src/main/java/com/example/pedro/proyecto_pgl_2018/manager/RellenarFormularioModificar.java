@@ -129,8 +129,8 @@ public class RellenarFormularioModificar extends AppCompatActivity {
         }
 
 
-        Solicitud solicitud = new Solicitud(requestID, nombre, lugar, queja, bitmap);
-        RequestUtility.update(getContentResolver(), solicitud, this);
+        Solicitud solicitud = new Solicitud(requestID, nombre, lugar, queja);
+        RequestUtility.updateRecordBitacora(getContentResolver(), solicitud);
         finish();
     }
 

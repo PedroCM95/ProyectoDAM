@@ -25,12 +25,21 @@ public class Utilidades {
         fos.close();
     }
 
+
+    public static final long SYNC_INTERVAL = 60; // Cada 60 segundos
+    public static final boolean VERSION_ADMINISTRADOR = false;
+
+    public static final String RUTA_SERVIDOR = "http://192.168.1.5:8080/ProyectoDAM/webresources";
+
     public static final int SIN_VALOR_INT = -1;
     public static final String SIN_VALOR_STRING = "";
 
     public static final int INSERTAR = 1;
     public static final int GUARDAR = 2;
 
+    public static final int OPERACION_INSERTAR = 1;
+    public static final int OPERACION_MODIFICAR = 2;
+    public static final int OPERACION_BORRAR = 3;
 
 }
 

@@ -126,7 +126,7 @@ public class RequestFragment extends ListFragment implements LoaderManager.Loade
             switch (menuItem.getItemId()){
                 case R.id.menu_delete:
                     int requestID = (Integer) viewSeleccionado.getTag();
-                    RequestUtility.delete(getActivity().getContentResolver(), requestID);
+                    RequestUtility.deleteRecordBitacora(getActivity().getContentResolver(), requestID);
                     break;
                 case R.id.menu_edit:
                     Intent intent = new Intent(getActivity(), RellenarFormularioModificar.class);
@@ -160,7 +160,8 @@ public class RequestFragment extends ListFragment implements LoaderManager.Loade
                 ManagerEventApplication.Solicitud.Queja
 
         };
-        Uri uri = Uri.parse(ManagerEventApplication.Solicitud.CONTENT_URI);
+
+        Uri uri = ManagerEventApplication.Solicitud.CONTENT_URI;
 
         String selection = null;
 

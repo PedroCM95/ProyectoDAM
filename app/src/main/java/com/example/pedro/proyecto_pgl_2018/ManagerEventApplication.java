@@ -1,6 +1,7 @@
 package com.example.pedro.proyecto_pgl_2018;
 
 import android.app.Application;
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 public class ManagerEventApplication extends Application {
@@ -9,12 +10,28 @@ public class ManagerEventApplication extends Application {
 
     public static final class Solicitud implements BaseColumns {
 
-        public static  String TABLE_NAME = "Request";
-        public static final String CONTENT_URI = "content://" + ManagerEventApplication.AUTHORITY + "/" + TABLE_NAME;
+        //public static  String TABLE_NAME = "solicitudes";
+        //public static final String CONTENT_URI = "content://" + ManagerEventApplication.AUTHORITY + "/" + TABLE_NAME;
+
+        public static final Uri CONTENT_URI = Uri.parse("content://"+AUTHORITY+"/Solicitudes");
 
         public static final String Name = "Nombre";
-        public static final String Lugar = "Direccion";
+        public static final String Lugar = "Lugar";
         public static final String Queja = "Queja";
+
+        //Implementamos las distintas tablas que va a tener nuestra base de datos
+    }
+
+    public static final class Bitacora implements BaseColumns {
+
+
+        //public static final String CONTENT_URI = "content://" + ManagerEventApplication.AUTHORITY + "/" + TABLE_NAME;
+
+        public static final Uri CONTENT_URI = Uri.parse("content://"+AUTHORITY+"/Bitacora");
+
+        public static final String ID_REQUEST = "ID_Request";
+        public static final String OPERACION = "Operacion";
+
 
         //Implementamos las distintas tablas que va a tener nuestra base de datos
     }

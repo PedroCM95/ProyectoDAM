@@ -116,8 +116,8 @@ public class RellenarFormularioInsertar extends AppCompatActivity {
         }
 
 
-        Solicitud solicitud = new Solicitud(Utilidades.SIN_VALOR_INT, nombre, lugar, queja, bitmap);
-        RequestUtility.insert(getContentResolver(), solicitud, this);
+        Solicitud solicitud = new Solicitud(Utilidades.SIN_VALOR_INT, nombre, lugar, queja);
+        RequestUtility.insertRecordBitacora(getContentResolver(), solicitud);
         finish();
 
 

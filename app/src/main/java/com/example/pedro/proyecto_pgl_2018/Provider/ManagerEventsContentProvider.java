@@ -18,8 +18,12 @@ import com.example.pedro.proyecto_pgl_2018.ManagerEventApplication;
 
 
 public class ManagerEventsContentProvider extends ContentProvider {
+
     private final static  int REQUEST_ONE_REG = 1;
     private final static int REQUEST_ALL_REGS = 2;
+
+    private final static  int BITACORA_ONE_REG = 3;
+    private final static int BITACORA_ALL_REGS = 4;
 
     private static final UriMatcher UriMatcher;
     private static final  SparseArray<String> mimeTypes;
@@ -27,10 +31,11 @@ public class ManagerEventsContentProvider extends ContentProvider {
     private SQLiteDatabase sqlDB;
     public DatabaseHelper dbHelper;
 
-    private final static String DATABASE_NAME = "manager_event.db";
-    private final static int DATABASE_VERSION = 4;
+    private final static String DATABASE_NAME = "proyecto.db";
+    private final static int DATABASE_VERSION = 71;
 
-    public static final String TABLE_NAME = "Request";
+    public static final String TABLE_NAME = "Solicitudes";
+    public static final String BITACORA_TABLE_NAME = "Bitacora";
 
     public static final int INVALID_URI = -1;
 
@@ -49,6 +54,21 @@ public class ManagerEventsContentProvider extends ContentProvider {
                 "vnd.android.cursor.dir/vnd." + ManagerEventApplication.AUTHORITY + "." + TABLE_NAME);
         mimeTypes.put(REQUEST_ONE_REG,
                 "vnd.android.cursor.item/vnd." + ManagerEventApplication.AUTHORITY + "." + TABLE_NAME);
+
+
+        //
+
+        UriMatcher.addURI(ManagerEventApplication.AUTHORITY,
+                BITACORA_TABLE_NAME,
+                BITACORA_ALL_REGS);
+        UriMatcher.addURI(ManagerEventApplication.AUTHORITY,
+                BITACORA_TABLE_NAME + "/#",
+                BITACORA_ONE_REG);
+
+        mimeTypes.put(BITACORA_ALL_REGS,
+                "vnd.android.cursor.dir/vnd." + ManagerEventApplication.AUTHORITY + "." + BITACORA_TABLE_NAME);
+        mimeTypes.put(BITACORA_ONE_REG,
+                "vnd.android.cursor.item/vnd." + ManagerEventApplication.AUTHORITY + "." + BITACORA_TABLE_NAME);
     }
 
     public static class DatabaseHelper extends SQLiteOpenHelper {
@@ -73,7 +93,13 @@ public class ManagerEventsContentProvider extends ContentProvider {
                     ManagerEventApplication.Solicitud.Lugar + " TEXT, " +
                     ManagerEventApplication.Solicitud.Queja + " TEXT );");
 
-            initilizeData(db);
+
+            db.execSQL("CREATE TABLE " + BITACORA_TABLE_NAME +
+                    " ( _id INTEGER PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT, " +
+                    ManagerEventApplication.Bitacora.ID_REQUEST + " INTEGER, " +
+                    ManagerEventApplication.Bitacora.OPERACION + " INTEGER );");
+
+            //initilizeData(db);
         }
 
         void initilizeData(SQLiteDatabase db) {
@@ -89,6 +115,7 @@ public class ManagerEventsContentProvider extends ContentProvider {
         @Override
         public void onUpgrade(SQLiteDatabase db, int i, int i1) {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + BITACORA_TABLE_NAME);
             onCreate(db);
         }
     }
@@ -106,6 +133,15 @@ public class ManagerEventsContentProvider extends ContentProvider {
                     break;
                 case REQUEST_ALL_REGS:
                     table = TABLE_NAME;
+                    break;
+
+                case BITACORA_ONE_REG:
+                    if (null == selection) selection = "";
+                    selection += ManagerEventApplication.Bitacora._ID + " = " + uri.getLastPathSegment();
+                    table = BITACORA_TABLE_NAME;
+                    break;
+                case BITACORA_ALL_REGS:
+                    table = BITACORA_TABLE_NAME;
                     break;
             }
            int rows = sqlDB.delete(table, selection, selectionArgs);
@@ -134,6 +170,9 @@ public class ManagerEventsContentProvider extends ContentProvider {
             switch (UriMatcher.match(uri)) {
                 case REQUEST_ALL_REGS:
                     table = TABLE_NAME;
+                    break;
+                case BITACORA_ALL_REGS:
+                    table = BITACORA_TABLE_NAME;
                     break;
             }
 
@@ -173,12 +212,22 @@ public class ManagerEventsContentProvider extends ContentProvider {
                     if (TextUtils.isEmpty(sortOrder)) sortOrder = ManagerEventApplication.Solicitud._ID + " ASC";
                     qb.setTables(TABLE_NAME);
                     break;
+
+                case BITACORA_ONE_REG:
+                    if (null == selection) selection = "";
+                    selection += ManagerEventApplication.Bitacora._ID + " = " + uri.getLastPathSegment();
+                    qb.setTables(BITACORA_TABLE_NAME);
+                    break;
+                case BITACORA_ALL_REGS:
+                    if (TextUtils.isEmpty(sortOrder)) sortOrder = ManagerEventApplication.Bitacora._ID + " ASC";
+                    qb.setTables(BITACORA_TABLE_NAME);
+                    break;
             }
 
             Cursor c;
             c = qb.query(db, projection, selection, selectionArgs,null, null,
                     sortOrder);
-            c.setNotificationUri(getContext().getContentResolver(), uri);
+           // c.setNotificationUri(getContext().getContentResolver(), uri);
             return c;
         }
 
@@ -197,6 +246,15 @@ public class ManagerEventsContentProvider extends ContentProvider {
                     break;
                 case REQUEST_ALL_REGS:
                    table = TABLE_NAME;
+                    break;
+
+                case BITACORA_ONE_REG:
+                    if (null == selection) selection = "";
+                    selection += ManagerEventApplication.Bitacora._ID + " = " + uri.getLastPathSegment();
+                    table = BITACORA_TABLE_NAME;
+                    break;
+                case BITACORA_ALL_REGS:
+                    table = BITACORA_TABLE_NAME;
                     break;
             }
 

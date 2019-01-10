@@ -9,22 +9,21 @@ public class Solicitud {
     private String Name;
     private String Lugar;
     private String Queja;
-    private Bitmap imagen;
+    //private Bitmap imagen;
 
     public Solicitud() {
         this.ID = Utilidades.SIN_VALOR_INT;
         this.Name = Utilidades.SIN_VALOR_STRING;
-        this.Lugar = Utilidades.SIN_VALOR_STRING;
-        this.Queja = Utilidades.SIN_VALOR_STRING;
-        this.setImagen(null);
+        this.setLugar(Utilidades.SIN_VALOR_STRING);
+        this.setQueja(Utilidades.SIN_VALOR_STRING);
+       // this.setImagen(null);
     }
 
-    public Solicitud(int ID, String name, String direccion, String queja, Bitmap imagen) {
+    public Solicitud(int ID, String name, String direccion, String queja) {
         this.ID = ID;
         this.Name = name;
-        this.Lugar = direccion;
-        this.Queja = queja;
-        this.imagen = imagen;
+        this.setLugar(Lugar);
+        this.setQueja(Queja);
     }
 
 
@@ -36,13 +35,13 @@ public class Solicitud {
         this.ID = ID;
     }
 
-    public Bitmap getImagen() {
+   /* public Bitmap getImagen() {
         return imagen;
     }
-
-    public void setImagen(Bitmap imagen) {
+*/
+   /* public void setImagen(Bitmap imagen) {
         this.imagen = imagen;
-    }
+    }*/
 
     public String getName() {
         return Name;
