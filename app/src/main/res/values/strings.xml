@@ -17,6 +17,7 @@
     <string name="menu_profile">Pefil</string>
     <string name="menu_settings">Configuración</string>
     <string name="menu_new_event">Nueva Solicitud</string>
+    <string name="menu_new_galery">Galería</string>
 
     <!-- Iconos de Ayuda -->
     <string name="frecuent_questions">Preguntas Frecuentes</string>

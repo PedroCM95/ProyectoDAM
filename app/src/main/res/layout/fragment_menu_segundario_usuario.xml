@@ -21,4 +21,9 @@
         tools:layout_constraintTop_creator="1"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="PRUEBA"/>
+
 </android.support.constraint.ConstraintLayout>

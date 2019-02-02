@@ -33,6 +33,8 @@
            android:layout_height="wrap_content"
            android:id="@+id/tabs"
            app:tabTextColor="@android:color/holo_orange_dark"
+           app:tabMode="fixed"
+
            />
 
     </android.support.design.widget.AppBarLayout>

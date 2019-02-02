@@ -1,7 +1,5 @@
 package com.example.pedro.proyecto_pgl_2018;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -135,10 +133,7 @@ public class MenuSegundarioUsuario extends AppCompatActivity {
             TextView textViewFragmento = (TextView) view.findViewById(R.id.section_label);
             switch (mPosition){
                 case 0:
-                    textViewFragmento.setText("Perfil");
-                    break;
-                case 1:
-                    textViewFragmento.setText("Configuración");
+                    textViewFragmento.setText("");
                     break;
             }
             return view;
@@ -165,7 +160,7 @@ public class MenuSegundarioUsuario extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 2;
+            return 1;
         }
 
         @Override
@@ -173,8 +168,6 @@ public class MenuSegundarioUsuario extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return "Perfil";
-                case 1:
-                    return "Configuración";
             }
             return null;
         }

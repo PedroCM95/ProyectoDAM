@@ -124,9 +124,14 @@ public class MenuPrincipalUsuario extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent();
+            intent.setAction(android.content.Intent.ACTION_VIEW);
+            intent.setType("image/*");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
 
         } else if (id == R.id.settings) {
-            Intent intent =  new Intent(getApplicationContext(), MenuSegundarioUsuario.class);
+            Intent intent =  new Intent(getApplicationContext(), ConfiguracionUsuario.class);
             getApplication().startActivity(intent);
 
         } else if (id == R.id.nav_share) {
