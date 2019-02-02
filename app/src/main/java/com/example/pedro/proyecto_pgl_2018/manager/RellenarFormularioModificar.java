@@ -64,6 +64,7 @@ public class RellenarFormularioModificar extends AppCompatActivity {
         requestID = this.getIntent().getExtras().getInt(ManagerEventApplication.Solicitud._ID);
         Solicitud solicitud = RequestUtility.readRecord(getContentResolver(), requestID);
 
+
         editTextNombre.setText(solicitud.getName());
         editTextLugar.setText(solicitud.getLugar());
         editTextQueja.setText(solicitud.getQueja());

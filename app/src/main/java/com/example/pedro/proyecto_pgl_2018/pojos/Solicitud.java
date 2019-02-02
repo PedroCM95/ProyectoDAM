@@ -1,29 +1,27 @@
 package com.example.pedro.proyecto_pgl_2018.pojos;
 
-import android.graphics.Bitmap;
-
 import com.example.pedro.proyecto_pgl_2018.constantes.Utilidades;
 
 public class Solicitud {
     private int ID;
-    private String Name;
-    private String Lugar;
-    private String Queja;
+    private String name;
+    private String lugar;
+    private String queja;
     //private Bitmap imagen;
 
     public Solicitud() {
         this.ID = Utilidades.SIN_VALOR_INT;
-        this.Name = Utilidades.SIN_VALOR_STRING;
+        this.name = Utilidades.SIN_VALOR_STRING;
         this.setLugar(Utilidades.SIN_VALOR_STRING);
         this.setQueja(Utilidades.SIN_VALOR_STRING);
        // this.setImagen(null);
     }
 
-    public Solicitud(int ID, String name, String direccion, String queja) {
+    public Solicitud(int ID, String name, String lugar, String queja) {
         this.ID = ID;
-        this.Name = name;
-        this.setLugar(Lugar);
-        this.setQueja(Queja);
+        this.name = name;
+        this.setLugar(lugar);
+        this.setQueja(queja);
     }
 
 
@@ -44,27 +42,27 @@ public class Solicitud {
     }*/
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getLugar() {
-        return Lugar;
+        return lugar;
     }
 
     public void setLugar(String direccion) {
-        Lugar = direccion;
+        lugar = direccion;
     }
 
     public String getQueja() {
-        return Queja;
+        return queja;
     }
 
     public void setQueja(String queja) {
-        Queja = queja;
+        this.queja = queja;
 
 
     }

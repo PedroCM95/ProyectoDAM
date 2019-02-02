@@ -32,7 +32,7 @@ public class ManagerEventsContentProvider extends ContentProvider {
     public DatabaseHelper dbHelper;
 
     private final static String DATABASE_NAME = "proyecto.db";
-    private final static int DATABASE_VERSION = 71;
+    private final static int DATABASE_VERSION = 80;
 
     public static final String TABLE_NAME = "Solicitudes";
     public static final String BITACORA_TABLE_NAME = "Bitacora";

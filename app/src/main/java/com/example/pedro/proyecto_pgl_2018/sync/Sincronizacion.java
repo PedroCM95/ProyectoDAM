@@ -18,7 +18,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class Sincronizacion {
-    private static final String LOGTAG = "Tiburcio - Sincronizacion";
+    private static final String LOGTAG = "Pedro - Sincronizacion";
     private static ContentResolver resolvedor;
     private static Context contexto;
     private static boolean esperandoRespuestaDeServidor = false;

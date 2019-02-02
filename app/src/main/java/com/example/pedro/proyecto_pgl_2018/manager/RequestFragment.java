@@ -56,10 +56,12 @@ public class RequestFragment extends ListFragment implements LoaderManager.Loade
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
-        MenuItem menuItem = menu.add(Menu.NONE, Utilidades.INSERTAR, Menu.NONE, "Insertar");
-        menuItem.setIcon(R.drawable.ic_formulario_white);
-        menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        super.onCreateOptionsMenu(menu, inflater);
+        if(Utilidades.VERSION_ADMINISTRADOR) {
+            MenuItem menuItem = menu.add(Menu.NONE, Utilidades.INSERTAR, Menu.NONE, "Insertar");
+            menuItem.setIcon(R.drawable.ic_formulario_white);
+            menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+            super.onCreateOptionsMenu(menu, inflater);
+        }
     }
 
     @Override
@@ -92,19 +94,20 @@ public class RequestFragment extends ListFragment implements LoaderManager.Loade
         mCallBacks = this;
 
         getLoaderManager().initLoader(0, null, this);
-
-        getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (mActionMode!=null){
-                    return false;
+        if(Utilidades.VERSION_ADMINISTRADOR) {
+            getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    if (mActionMode != null) {
+                        return false;
+                    }
+                    mActionMode = getActivity().startActionMode(mActionModeCallback);
+                    view.setSelected(true);
+                    viewSeleccionado = view;
+                    return true;
                 }
-                mActionMode = getActivity().startActionMode(mActionModeCallback);
-                view.setSelected(true);
-                viewSeleccionado = view;
-                return true;
-            }
-        });
+            });
+        }
     }
 
     ActionMode.Callback mActionModeCallback = new ActionMode.Callback() {
@@ -144,9 +147,6 @@ public class RequestFragment extends ListFragment implements LoaderManager.Loade
             mActionMode = null;
         }
     };
-
-
-
 
 
 

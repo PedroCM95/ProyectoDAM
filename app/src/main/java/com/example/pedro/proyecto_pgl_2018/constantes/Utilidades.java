@@ -27,7 +27,7 @@ public class Utilidades {
 
 
     public static final long SYNC_INTERVAL = 60; // Cada 60 segundos
-    public static final boolean VERSION_ADMINISTRADOR = false;
+    public static final boolean VERSION_ADMINISTRADOR = true;
 
     public static final String RUTA_SERVIDOR = "http://192.168.1.5:8080/ProyectoDAM/webresources";
 

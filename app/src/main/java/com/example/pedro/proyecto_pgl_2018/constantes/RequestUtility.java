@@ -2,11 +2,8 @@ package com.example.pedro.proyecto_pgl_2018.constantes;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.example.pedro.proyecto_pgl_2018.pojos.Bitacora;
 import com.example.pedro.proyecto_pgl_2018.pojos.Solicitud;
@@ -14,7 +11,6 @@ import com.example.pedro.proyecto_pgl_2018.pojos.Solicitud;
 
 import com.example.pedro.proyecto_pgl_2018.ManagerEventApplication;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class RequestUtility {
@@ -55,7 +51,6 @@ public class RequestUtility {
         bitacora.setID_Request(solicitud.getID());
         bitacora.setOperacion(Utilidades.OPERACION_INSERTAR);
         RequestBitacora.insert(resolver, bitacora);
-
 
     }
 
