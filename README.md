@@ -46,7 +46,50 @@
   Quedando de esta manera y solo nos quedaría ejecutar el Apache y MySQL desde el panel del XAMPP.
   
 
+## Autor ✒️
+
+  -  **Pedro Alberto Cabello Munguía** - *Trabajo Final DAM* - Alumno del Centro [IES El Rincón](www.ieselrincon.org/)
+  
+  
+## Fuentes - Material 🛠️
+
+  Muchas de las actuaciones realizadas en el proyecto ha sido gracias a documentación de distintas fuentes de internet. Añado una y
+  recomiendo su visualización como su contenido en distintos ambitos de la programación.
+  
+  - [tcrurav][4]
+
+## Licencia 📄
+
+    Todos los contenidos de este repositorio estan a disposición bajo los términos de la licencia [MIT][5] 
+    
+    The MIT License
+
+    Copyright (c) 2019-2020, https://github.com/PedroCM95
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+  
+  
+
+
 
 [1]: https://developer.android.com/studio/?hl=es-419
 [2]: https://netbeans.org/
 [3]: https://www.apachefriends.org/es/index.html
+[4]: https://www.youtube.com/user/tcrurav/feed
+[5]: https://es.wikipedia.org/wiki/Licencia_MIT
