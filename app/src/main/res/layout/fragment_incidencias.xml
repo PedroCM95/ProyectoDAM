@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".fragments.IncidenciasFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="SOLICITUD DE INCIDENCIA"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/cardview_light_background"
+            android:textStyle="bold"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="59dp">
+
+            <EditText
+                android:id="@+id/nombre_solicitud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:hint="@string/Name"
+                android:inputType="textCapWords" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/lugar_solicitud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Place"
+                android:layout_marginLeft="5dp"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/queja_solicitud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Queja"
+                android:layout_marginLeft="5dp"
+                android:maxLength="150"
+                android:inputType="textMultiLine"
+                android:lines="5"
+
+
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Picture"
+            android:layout_margin="10dp"
+            />
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_menu_camera"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/button_captura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/captura"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:id="@+id/button_mandar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="enviar"
+                android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
