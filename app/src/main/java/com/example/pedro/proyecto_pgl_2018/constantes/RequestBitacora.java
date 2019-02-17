@@ -47,7 +47,7 @@ public class RequestBitacora {
 
     }
 
-    static public void update(ContentResolver resolver, Bitacora bitacora, Context contexto){
+    static public void update(ContentResolver resolver, Bitacora bitacora){
         Uri uri = Uri.parse(ManagerEventApplication.Bitacora.CONTENT_URI + "/" + bitacora.getID());
 
         ContentValues values = new ContentValues();

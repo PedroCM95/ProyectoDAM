@@ -2,6 +2,7 @@
     <string name="app_name">MANAGER FROM EVENT</string>
     <string name="app_name_login">LOGIN</string>
     <string name="app_name_solicity">REQUEST</string>
+    <string name="app_name_registrar">Registrar</string>
     <string name="Welcome">Bienvenido al Gestor de Incidencia de Gran Canaria</string>
     <string name="countrie">Seleccione su municipio :</string>
     <string name="Start_Formulario">BIENVENIDO AL GESTOR DE INCIDENCIAS DEL MUNICIPIO DE</string>
@@ -11,13 +12,22 @@
     <string name="navigation_drawer_open">asdasda</string>
     <string name="navigation_drawer_close">22222</string>
 
+    <!-- IP -->
 
+    <string name="ip2">http://192.168.1.5</string>
+    <string name="ip">https://proyectopedrocm95.000webhostapp.com</string>
+
+
+    <string name="consultar_usuario">Introduzca identificador de usuario</string>
     <!-- Menú -->
 
     <string name="menu_profile">Pefil</string>
     <string name="menu_settings">Configuración</string>
     <string name="menu_new_event">Nueva Solicitud</string>
     <string name="menu_new_galery">Galería</string>
+    <string name="menu_new_user">Nuevo Usuario</string>
+    <string name="menu_consultar">Consultar Usuarios</string>
+    <string name="menu_mis_consultas">Incidencias</string>
 
     <!-- Iconos de Ayuda -->
     <string name="frecuent_questions">Preguntas Frecuentes</string>
@@ -57,8 +67,14 @@
     <string name="Login_password">Contraseña</string>
     <string name="Login_name">Nombre</string>
     <string name="login">Login</string>
-    <string name="Register">Registrate Aquí</string>
+    <string name="login_registrar">Registrar</string>
 
+    <!--Registrar -->
+
+    <string name="Registrar_nombre">Nombre</string>
+    <string name="Registrar_password">Password</string>
+    <string name="Registrar_apellidos">Apellidos</string>
+    <string name="Registrar_documento">Identificador</string>
     <!--Departamentos -->
 
     <string name="Science">Consejería de Cultura</string>
@@ -150,6 +166,9 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_my_request">My Request</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

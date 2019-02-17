@@ -9,9 +9,25 @@
             android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/menu_profile" />
         <item
+            android:id="@+id/register"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="@string/menu_new_user" />
+
+        <item
+            android:id="@+id/show"
+            android:icon="@drawable/ic_import_contacts_black_24dp"
+            android:title="@string/menu_consultar" />
+
+        <item
             android:id="@+id/event"
             android:icon="@drawable/ic_add_black_24dp"
             android:title="@string/menu_new_event" />
+
+        <item
+            android:id="@+id/my_request"
+            android:icon="@drawable/ic_insert_drive_file_black_24dp"
+            android:title="@string/menu_mis_consultas" />
+
         <item
             android:id="@+id/settings"
             android:icon="@drawable/ic_settings_black_24dp"

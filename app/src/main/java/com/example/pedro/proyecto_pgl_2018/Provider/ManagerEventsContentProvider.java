@@ -34,7 +34,8 @@ public class ManagerEventsContentProvider extends ContentProvider {
     private final static String DATABASE_NAME = "proyecto.db";
     private final static int DATABASE_VERSION = 80;
 
-    public static final String TABLE_NAME = "Solicitudes";
+    public static final String TABLE_NAME = "solicitudes";
+
     public static final String BITACORA_TABLE_NAME = "Bitacora";
 
     public static final int INVALID_URI = -1;
@@ -46,6 +47,7 @@ public class ManagerEventsContentProvider extends ContentProvider {
         UriMatcher.addURI(ManagerEventApplication.AUTHORITY,
                 TABLE_NAME,
                 REQUEST_ALL_REGS);
+
         UriMatcher.addURI(ManagerEventApplication.AUTHORITY,
                 TABLE_NAME + "/#",
                 REQUEST_ONE_REG);
@@ -54,6 +56,8 @@ public class ManagerEventsContentProvider extends ContentProvider {
                 "vnd.android.cursor.dir/vnd." + ManagerEventApplication.AUTHORITY + "." + TABLE_NAME);
         mimeTypes.put(REQUEST_ONE_REG,
                 "vnd.android.cursor.item/vnd." + ManagerEventApplication.AUTHORITY + "." + TABLE_NAME);
+        //
+
 
 
         //

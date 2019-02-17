@@ -10,44 +10,7 @@
     tools:context=".MenuPrincipalUsuario"
     tools:showIn="@layout/app_bar_menu_principal_usuario"
     android:background="@drawable/gradient"
+    android:id="@+id/content_main"
     >
-
-    <TextView
-        android:id="@+id/Name_User"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorazul"
-
-
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-    android:id="@+id/button_formulary"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginTop="70dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:text="@string/New_formulary"
-    app:layout_constraintTop_toTopOf="parent"
-
-    />
-
-    <Button
-        android:id="@+id/button_solicitudes"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="165dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="@string/My_events"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
 
 </android.support.constraint.ConstraintLayout>

@@ -1,7 +1,5 @@
 package com.example.pedro.proyecto_pgl_2018.pojos;
 
-import android.graphics.Bitmap;
-
 import com.example.pedro.proyecto_pgl_2018.constantes.Utilidades;
 
 public class Bitacora {

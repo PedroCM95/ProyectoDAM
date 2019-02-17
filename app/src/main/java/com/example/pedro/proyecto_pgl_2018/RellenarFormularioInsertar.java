@@ -1,6 +1,7 @@
 package com.example.pedro.proyecto_pgl_2018;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,11 +21,20 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.pedro.proyecto_pgl_2018.Entidades.VolleySingleton;
 import com.example.pedro.proyecto_pgl_2018.constantes.RequestUtility;
 import com.example.pedro.proyecto_pgl_2018.constantes.Utilidades;
 import com.example.pedro.proyecto_pgl_2018.pojos.Solicitud;
 
-public class RellenarFormularioInsertar extends AppCompatActivity {
+import org.json.JSONObject;
+
+public class RellenarFormularioInsertar extends AppCompatActivity{
 
     EditText editTextNombre, editTextLugar, editTextQueja;
     Button  button_captura;
@@ -33,6 +44,7 @@ public class RellenarFormularioInsertar extends AppCompatActivity {
     public static final int CAMERA_REQUEST = 2;
 
     Bitmap bitmap = null;
+
 
 
     @Override
@@ -58,6 +70,9 @@ public class RellenarFormularioInsertar extends AppCompatActivity {
         editTextNombre = (EditText) findViewById(R.id.editTextNombre);
         editTextLugar = (EditText) findViewById(R.id.editTextLugar);
         editTextQueja = (EditText) findViewById(R.id.editTextQueja);
+
+
+
     }
 
     @Override
@@ -81,6 +96,7 @@ public class RellenarFormularioInsertar extends AppCompatActivity {
 
 
     void attemptGuardar(){
+
 
         editTextNombre = (EditText) findViewById(R.id.editTextNombre);
         editTextQueja = (EditText) findViewById(R.id.editTextQueja);
@@ -116,12 +132,15 @@ public class RellenarFormularioInsertar extends AppCompatActivity {
         }
 
 
+
         Solicitud solicitud = new Solicitud(Utilidades.SIN_VALOR_INT, nombre, lugar, queja);
         RequestUtility.insertRecordBitacora(getContentResolver(), solicitud);
         finish();
 
 
     }
+
+
 
     private void cargarImagen() {
 
@@ -180,4 +199,6 @@ public class RellenarFormularioInsertar extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+
 }
