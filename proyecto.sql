@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-01-2019 a las 14:15:18
+-- Tiempo de generación: 03-02-2019 a las 12:28:22
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.0
 
@@ -40,9 +40,20 @@ CREATE TABLE `solicitudes` (
 --
 
 INSERT INTO `solicitudes` (`PK_ID`, `nombre`, `lugar`, `queja`) VALUES
-(1, 'Pedro Alberto Cabello Munguia', 'Calle Romanticismo', 'Rotura de la farola de mi casa'),
-(2, 'Pedro Alberto Cabello Munguia', 'Calle Romanticismo', 'Rotura de farola'),
-(3, 'asd', 'DAM', 'DAM');
+(1, 'eeeeaasd', 'eeee', 'eeee');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `PK_ID` int(100) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Índices para tablas volcadas
@@ -52,6 +63,12 @@ INSERT INTO `solicitudes` (`PK_ID`, `nombre`, `lugar`, `queja`) VALUES
 -- Indices de la tabla `solicitudes`
 --
 ALTER TABLE `solicitudes`
+  ADD PRIMARY KEY (`PK_ID`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
   ADD PRIMARY KEY (`PK_ID`);
 COMMIT;
 
