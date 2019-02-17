@@ -16,11 +16,7 @@
     ```
     https://developer.android.com/studio/?hl=es-419
     ```
-  - [Instalación de Netbeans][2]. (Entorno de desarrollo para el lenguaje de programación Java).
-  
-    ```
-    https://netbeans.org/
-    ```
+    
   - [Instalación de XAMPP][3]. (XAMPP es una distribución de Apache completamente gratuita y fácil de instalar 
     que contiene Apache, MySQL y Tomcat).
     
@@ -36,14 +32,13 @@
   ![1](https://user-images.githubusercontent.com/43642790/52635824-d98de900-2ec2-11e9-9172-9302f6e59953.PNG)
   ![2](https://user-images.githubusercontent.com/43642790/52635860-f3c7c700-2ec2-11e9-997b-5c32a7dd341c.PNG)
 
-  - En segundo lugar, tenemos que ejecutar el Netbeans y a la vez ejecutar el XAMPP. Una vez hecho eso, nos dirigimos a 
-    nuestro Netbeans para ejecutar nuestro servidor Tomcat de la siguiente manera:
+  - En segundo lugar, tenemos que ejecutar el XAMPP con los dos apartados de APACHE y MySQL. Desde ahí nos conectaremos a
+  nuestra base de datos remota junto con nuestro servidor web 000webhost.
   
-  ![3](https://user-images.githubusercontent.com/43642790/52636186-c9c2d480-2ec3-11e9-8c0b-48f3ea51ab6d.png)
-  ![4](https://user-images.githubusercontent.com/43642790/52636277-0ee70680-2ec4-11e9-89b8-4db7c9eb9104.PNG)
+  
 
 
-  Quedando de esta manera y solo nos quedaría ejecutar el Apache y MySQL desde el panel del XAMPP.
+  
   
 
 ## Autor ✒️
