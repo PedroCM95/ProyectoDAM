@@ -5,7 +5,7 @@
 ## Objetivo de la APP 🚀
   El objetivo de esta aplicación es crear una app de Android donde el usuario pueda hacer un gestor de incidencias directamente comunicado
   con la administración pública de su municipio o provincia.En este caso, el usuario podrá crear su incidencia basada en los distintos
-  campos que tenga su formulario y sincronizado con un base de datos y un servidor. De igual forma, la respuesta de la administración 
+  campos que tenga su formulario y sincronizado con un base de datos. De igual forma, la respuesta de la administración 
   se realiza a través de la app.
   Lo que se pretende con esta App es crear una similitud con la creación de un recurso que hoy en día se hace en las instalaciones de 
   una administración pero que gracias a una App podríamos gestionar más rápido y eficaz.
@@ -33,13 +33,12 @@
   ![2](https://user-images.githubusercontent.com/43642790/52635860-f3c7c700-2ec2-11e9-997b-5c32a7dd341c.PNG)
 
   - En segundo lugar, tenemos que ejecutar el XAMPP con los dos apartados de APACHE y MySQL. Desde ahí nos conectaremos a
-  nuestra base de datos remota junto con nuestro servidor web 000webhost.
+  nuestra base de datos remota junto con nuestro 000webhost.
   
   
+  ![1](https://user-images.githubusercontent.com/43642790/52918811-579f2500-32f3-11e9-82b9-80bf57d268f1.PNG)
+  ![2](https://user-images.githubusercontent.com/43642790/52918821-85846980-32f3-11e9-8782-b6d55b94ea65.PNG)
 
-
-  
-  
 
 ## Autor ✒️
 
